@@ -1,0 +1,49 @@
+# Personal workspaces and generated runtime state
+data/
+**/data/
+settings.json
+**/settings.json
+config.json
+**/config.json
+service.json
+**/service.json
+资料/
+
+# Runtime bundles and release artifacts belong in GitHub Releases
+runtime/
+**/runtime/
+dist/
+releases/
+build/
+*.zip
+*.sha256.txt
+文件校验.json
+
+# Logs, temporary files and caches
+*.log
+*.tmp
+*.bak
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Local verification output and screenshots
+qa-*/
+**/qa-results/
+*-result.json
+*-results.json
+preview-*.png
+test-results/
+playwright-report/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
