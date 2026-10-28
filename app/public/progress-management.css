@@ -1,0 +1,37 @@
+.progress-collections{margin:0;gap:3px;flex-shrink:0}.progress-collections button{font-size:12px;white-space:nowrap}.progress-collections button>span{display:inline-block;margin-left:5px;font-size:11px;opacity:.7;font-variant-numeric:tabular-nums}#progress-overview>.progress-top{margin-bottom:10px}#progress-overview>.progress-filterbar{margin-top:0;margin-bottom:15px;gap:12px;align-items:center;flex-wrap:wrap}#progress-overview>.progress-filterbar>input{margin-left:auto;max-width:280px}
+.progress-project-cell{display:flex;align-items:flex-start;gap:11px}.progress-project-cell>div{min-width:0}.progress-drag-handle{flex:0 0 25px;width:25px;padding:1px 0;margin-top:0;border:0;background:transparent;color:var(--dim);font-size:20px;line-height:1.4;cursor:grab;touch-action:pan-y}.progress-drag-handle:hover{background:var(--soft);color:var(--ink)}.progress-drag-handle:active{cursor:grabbing}.progress-drag-handle:disabled{opacity:.28;cursor:default}.progress-dragging{opacity:.4}.progress-overview-table tr.progress-drop-before>td{box-shadow:inset 0 2px var(--accent)}.progress-overview-table tr.progress-drop-after>td{box-shadow:inset 0 -2px var(--accent)}
+.progress-overview-table .progress-menu-column{position:relative;width:45px;min-width:45px;padding-right:11px;padding-left:4px;text-align:right;vertical-align:top}.progress-menu-column>.visually-hidden{position:absolute;left:0;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.progress-project-menu{position:relative;display:inline-block;text-align:left}.progress-project-menu>summary{list-style:none;cursor:pointer;color:var(--dim);width:29px;line-height:25px;text-align:center;border-radius:5px;font-size:19px}.progress-project-menu>summary::-webkit-details-marker{display:none}.progress-project-menu>summary:hover,.progress-project-menu[open]>summary{background:var(--soft);color:var(--ink)}.progress-project-menu>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.progress-project-menu>div{position:absolute;right:0;top:100%;z-index:4;min-width:108px;padding:5px;background:var(--paper);border:1px solid var(--line);border-radius:7px;box-shadow:0 5px 15px #0001}.progress-project-menu>div>button{display:block;width:100%;border:0;background:transparent;text-align:left;padding:7px 10px;white-space:nowrap;font-size:12px}.progress-project-menu>div>button:hover{background:var(--soft)}.progress-project-menu>div>button[data-progress-archive]{border-top:1px solid var(--line);border-radius:0;margin-top:3px;padding-top:10px;color:var(--dim)}.progress-project-menu button:disabled{opacity:.35;cursor:default}.progress-closed-badge{color:var(--dim);background:var(--bg)}#progress-archive-detail{color:var(--dim);border-color:transparent;background:transparent;font-size:12px}
+@media(max-width:780px){.progress-project-cell{gap:7px}.progress-drag-handle{width:23px;flex-basis:23px}.progress-project-menu>summary{min-height:36px;line-height:36px}.progress-project-menu>div>button{min-height:40px}#progress-overview>.progress-filterbar{gap:9px}#progress-overview>.progress-filterbar>input{flex:1 1 180px;min-width:0;margin-left:0;max-width:none}.progress-collections{margin:0}}
+
+/* Keep each project's next action in the first reading pass. */
+#progress-view .progress-overview-table{table-layout:fixed;min-width:880px}
+.progress-col-project{width:25%}.progress-col-next{width:30%}.progress-col-date{width:12%}.progress-col-status{width:9%}.progress-col-done{width:10%}.progress-col-attention{width:10%}.progress-col-menu{width:4%}
+#progress-view .progress-overview-table td{vertical-align:middle;overflow-wrap:anywhere}
+#progress-view .progress-overview-table .progress-project-column{width:auto;min-width:0}
+#progress-view .progress-overview-table .progress-project-name{font-size:14px;font-weight:600;color:var(--ink)}
+#progress-view .progress-overview-table .progress-next-heading,
+#progress-view .progress-overview-table .progress-next-column{background:color-mix(in srgb,var(--accent) 6%,var(--paper));padding-left:20px;padding-right:20px}
+#progress-view .progress-overview-table .progress-next-heading{color:var(--accent);font-weight:600;font-size:13px}
+.progress-next-step{display:flex;align-items:baseline;gap:10px;color:var(--ink);font-size:16px;font-weight:600;line-height:1.65;overflow-wrap:anywhere}
+.progress-next-step>span:last-child{min-width:0}
+.progress-next-arrow{flex:none;color:var(--accent);font-size:18px;font-weight:500}
+.progress-next-step.is-empty{color:var(--dim);font-size:13px;font-weight:400}
+#progress-view .progress-overview-table .progress-date-column{font-variant-numeric:tabular-nums;white-space:nowrap}
+#progress-view .progress-overview-table .progress-attention-column>span{display:block;margin-bottom:3px}
+#progress-view .progress-overview-table .progress-archived-row .progress-next-step{color:var(--dim);font-weight:400}
+@media(max-width:780px){
+ #progress-view .progress-overview-table{display:block;min-width:0;width:100%}
+ .progress-overview-table colgroup{display:none}
+ .progress-overview-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ .progress-overview-table tbody{display:block}
+ #progress-view .progress-overview-table tbody tr{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px;padding:20px 0;border-bottom:1px solid var(--line)}
+ #progress-view .progress-overview-table tbody td{display:block;width:auto;min-width:0;padding:0;border:0;background:transparent}
+ #progress-view .progress-overview-table .progress-project-column{grid-column:1/-1;padding-right:38px}
+ #progress-view .progress-overview-table .progress-next-column{grid-column:1/-1;padding:12px 14px;background:color-mix(in srgb,var(--accent) 6%,var(--paper));border-radius:6px}
+ .progress-next-column::before{content:'下一个节点';display:block;margin-bottom:5px;color:var(--accent);font-size:11px;font-weight:500}
+ .progress-next-step{font-size:16px;gap:8px}
+ #progress-view .progress-overview-table td[data-label]::before{content:attr(data-label);display:block;font-size:10px;color:var(--dim);margin-bottom:5px}
+ #progress-view .progress-overview-table .progress-menu-column{position:absolute;right:0;top:19px;width:30px;min-width:30px}
+ .progress-overview-table .progress-path{font-size:10px;margin-top:4px}
+ .progress-overview-table .progress-meter{margin-top:5px}
+}
